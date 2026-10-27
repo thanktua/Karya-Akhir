@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Bendahara</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #dae4ee;
+    }
+
+    form {
+        background-color: white;
+        padding: 10px;
+        gap: 10px;
+        width: 30%;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+        max-height: 150px;
+        max-width: 150px;
+    }
+
+    input {
+        padding: 5px;
+        width: 100%;
+        display: block;   
+        width: 100%;      
+        box-sizing: border-box; 
+        margin-bottom: 10px; 
+    }
+
+    button{
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: blue;
+        border: 1px solid black;
+        transition: 0.3s ease-out;
+        color: white;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: rgb(127, 127, 255);
+        scale: 1.01;
+    }
+
+    @media screen and (max-width: 360px) {
+        body {
+            padding: 10px; 
+        }
+
+        form {
+            width: 100%;     
+            padding: 15px;    
+            box-shadow: none;  
+            border-radius: 0; 
+        }
+
+        h1 {
+            font-size: 20px;   /* Judul diperkecil agar tidak turun ke bawah */
+        }
+
+        img {
+            max-height: 80px;  /* Logo diperkecil */
+            max-width: 80px;
+        }
+
+        h4 {
+            font-size: 14px;   /* Label username/password sedikit diperkecil */
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        form {
+        width: 90%;          /* Form memenuhi hampir seluruh lebar layar */
+        padding: 20px;       /* Memberi ruang sedikit lebih lega */
+        }
+
+        h1 {
+            font-size: 24px;     /* Mengecilkan judul agar tidak patah */
+        }  
+
+        img {
+            max-height: 100px;   /* Mengecilkan logo agar tidak makan tempat */
+            max-width: 100px;
+        }
+    }
+</style>
+<body>
+    <form action="">
+        <div style="text-align: center; margin-bottom: 10px;">
+            <img src="../image/man.png" alt="logo man 2">
+            <h1>Login Bendahara Kelas</h1>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <h4>Username: </h4>
+            <input type="text">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <h4>Password: </h4>
+            <input type="text" id="password">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <button type="button" id="Press">Masuk</button>
+        </div>
+        <div style="text-align: center; width: 90%;">
+            <p style="color: black;">Catatan: Masukan password sesuai dengan yang di berikan admin</p>
+        </div>
+    </form>
+</body>
+<script>
+    const pass = document.querySelector('#password');
+    const sub = document.querySelector('#Press');
+
+    sub.addEventListener("click", function() {
+        if (pass.value === "8888") {
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Password salah, silakan coba lagi.");
+            pass.value = ""; 
+        }
+    });
+</script>
+</html>
